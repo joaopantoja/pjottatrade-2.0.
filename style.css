@@ -1,3 +1,4 @@
+
 body {
     background-color: black;
     color: limegreen;
@@ -12,7 +13,7 @@ h1 {
 .tradingview-widget-container {
     margin: 20px auto;
     width: 90%;
-    height: 500px;
+    height: 90vh; /* Agora a altura ocupa 90% da altura da tela */
 }
 .sinal {
     margin-top: 30px;
