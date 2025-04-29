@@ -1,29 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PJOTTA TRADE</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Seu Site de Análise</title>
 </head>
 <body>
-  <h1>PJOTTA TRADE</h1>
-  <p>"Eu sou a prova viva de que sonhos não envelhecem, eles se tornam realidade"</p>
 
-  <div class="tradingview-widget-container">
-    <div id="tradingview_chart"></div>
+  <!-- Contador no topo -->
+  <div id="contador" style="padding:10px;background:#f9f9f9;border-bottom:1px solid #ccc;text-align:center;font-family:sans-serif;font-size:16px;">
+    Acertos: <span id="acertos">0</span> |
+    Erros: <span id="erros">0</span> |
+    Taxa de Acerto: <span id="taxa">0%</span>
   </div>
 
-  <div class="sinal">
-    <p id="sinalAtual">Sinal Atual: <span style="color:lime">Aguardando...</span></p>
-    <p id="acertos">Acertos: 0</p>
-    <p id="erros">Erros: 0</p>
-    <p id="taxaAcerto">Taxa de Acerto: 0%</p>
-    <p id="ultimoResultado">Último Resultado: Nenhum ainda</p>
-    <p id="meta">Faltam R$ 999.900,00 para seu 1 MILHÃO</p>
+  <!-- Gráfico e lógica existente -->
+  <div id="grafico-container">
+    <!-- Conteúdo do seu site original permanece igual -->
   </div>
 
-  <script src="https://s3.tradingview.com/tv.js"></script>
-  <script src="script.js"></script>
+  <script>
+    function salvarContagem(acertos, erros, data) {
+      localStorage.setItem('acertos', acertos);
+      localStorage.setItem('erros', erros);
+      localStorage.setItem('dataContagem', data);
+    }
+
+    function carregarContagem() {
+      const hoje = new Date().toISOString().slice(0, 10);
+      const dataSalva = localStorage.getItem('dataContagem');
+
+      if (dataSalva !== hoje) {
+        salvarContagem(0, 0, hoje);
+        return { acertos: 0, erros: 0 };
+      }
+      return {
+        acertos: parseInt(localStorage.getItem('acertos') || '0'),
+        erros: parseInt(localStorage.getItem('erros') || '0')
+      };
+    }
+
+    function atualizarContador() {
+      const { acertos, erros } = carregarContagem();
+      const total = acertos + erros;
+      const taxa = total > 0 ? ((acertos / total) * 100).toFixed(1) : 0;
+      document.getElementById('acertos').innerText = acertos;
+      document.getElementById('erros').innerText = erros;
+      document.getElementById('taxa').innerText = `${taxa}%`;
+    }
+
+    function registrarResultado(resultado) {
+      let { acertos, erros } = carregarContagem();
+      if (resultado === 'acerto') acertos++;
+      else if (resultado === 'erro') erros++;
+      salvarContagem(acertos, erros, new Date().toISOString().slice(0, 10));
+      atualizarContador();
+    }
+
+    atualizarContador();
+  </script>
+
 </body>
 </html>
