@@ -1,28 +1,19 @@
-
 body {
-  background-color: #000;
-  color: #00FF00;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+    background-color: black;
+    color: limegreen;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
-
 h1 {
-  margin-top: 20px;
+    margin-top: 20px;
 }
-
 .tradingview-widget-container {
-  margin: 20px auto;
-  width: 90%;
-  height: 500px;
+    margin: 20px auto;
+    width: 90%;
+    height: 500px;
 }
-
 .sinal {
-  margin-top: 20px;
-}
-
-.sinal p {
-  font-size: 18px;
-  margin: 5px 0;
+    margin-top: 30px;
 }
