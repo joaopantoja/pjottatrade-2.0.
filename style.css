@@ -1,30 +1,28 @@
+
 body {
-    background-color: black;
-    color: lime;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 0;
-    margin: 0;
+  background-color: black;
+  color: lime;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-
 h1 {
-    margin-top: 20px;
-    font-size: 32px;
+  font-size: 2em;
+  margin-top: 20px;
 }
-
+p {
+  font-size: 1.1em;
+}
 .tradingview-widget-container {
-    margin: 20px auto;
-    width: 90%;
-    height: 400px;
+  height: 400px;
+  max-width: 100%;
+  margin: 20px auto;
 }
-
-#sinalAtual {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 40px;
+.sinal {
+  margin-top: 20px;
 }
-
-#meta {
-    margin-top: 10px;
-    color: lime;
+.meta {
+  color: lime;
+  font-weight: bold;
 }
