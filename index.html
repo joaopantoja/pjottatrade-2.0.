@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PJOTTA TRADE</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>PJOTTA TRADE</h1>
@@ -16,8 +15,12 @@
   </div>
 
   <div class="sinal">
-    <p id="sinalAtual">Sinal Atual: <strong>Aguardando...</strong></p>
-    <p class="meta">Faltam R$ 999.900,00 para seu 1 MILHÃO</p>
+    <p id="sinalAtual">Sinal Atual: <span style="color:lime">Aguardando...</span></p>
+    <p id="acertos">Acertos: 0</p>
+    <p id="erros">Erros: 0</p>
+    <p id="taxaAcerto">Taxa de Acerto: 0%</p>
+    <p id="ultimoResultado">Último Resultado: Nenhum ainda</p>
+    <p id="meta">Faltam R$ 999.900,00 para seu 1 MILHÃO</p>
   </div>
 
   <script src="https://s3.tradingview.com/tv.js"></script>

@@ -1,4 +1,3 @@
-
 body {
   background-color: black;
   color: lime;
@@ -7,22 +6,23 @@ body {
   margin: 0;
   padding: 0;
 }
+
 h1 {
-  font-size: 2em;
   margin-top: 20px;
+  font-size: 2em;
 }
-p {
-  font-size: 1.1em;
-}
+
 .tradingview-widget-container {
+  width: 100%;
   height: 400px;
-  max-width: 100%;
   margin: 20px auto;
 }
+
 .sinal {
-  margin-top: 20px;
+  margin-top: 30px;
+  font-size: 1.2em;
 }
-.meta {
-  color: lime;
-  font-weight: bold;
+
+p {
+  margin: 5px;
 }
